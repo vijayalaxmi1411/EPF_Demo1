@@ -1,0 +1,15 @@
+﻿put the time into currentTime
+log currentTime
+put three minutes hence into FutureTime
+log FutureTime
+
+put three minutes ago into PastTime
+log PastTime
+
+
+
+
+
+
+
+
