@@ -1,0 +1,20 @@
+﻿//DoubleClick "ChromeIcon"
+typetext windowsKey,"r"
+typetext "chrome",return
+//Click "GuestMode"
+wait 5
+
+//Click "MaximizeButton"
+TypeText "http://nopcommerce.testplant.com",return
+wait 5
+repeat until ImageFound(text:"HTC One M8 Android L 5.0 Lollipop")
+	ScrollWheelDown 10
+end repeat
+
+if ImageFound(text:"HTC One M8 Android L 5.0 Lollipop")
+	click FoundImageLocation()
+end if	
+Wait 10
+click text:"ADD TO CART",waitFor:15
+//TpeText altKey,f4
+

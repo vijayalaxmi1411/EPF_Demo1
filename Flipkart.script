@@ -1,0 +1,36 @@
+﻿DoubleClick  "ChromeIcon"
+//click "work"
+TypeText "https://www.flipkart.com/",return
+
+click "Searchbar"
+TypeText "Samsung Mobiles",return
+WaitFor 5, text:"Samsung Mobiles"
+if ImageFound(imageName:"SAMSUNGGalaxyF22DenimBlue128GB" , waitFor:5)
+	click FoundImageLocation()
+else
+	LogError "image not found"
+	
+end if
+WaitFor 5, "Compare"
+if ImageFound( "EnterDeliveryPinCode")
+	Click "EnterDeliveryPinCode"
+	TypeText "500008"
+	click "Check"
+	WaitFor 5, "AddToCart1"
+	click "AddToCart1"
+end if
+click "GOTOCART"
+if ImageFound("MyCart")
+	LogSuccess "Items added to the cart"
+	click "PLACEORDER"
+end if
+
+
+
+
+
+
+
+
+
+
