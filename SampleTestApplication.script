@@ -1,0 +1,39 @@
+﻿to handle openRun browserName
+	Typetext windowsKey,"r"
+	TypeText browserName,return
+end openRun
+to handle openApp siteName
+	TypeText siteName,return
+	WaitFor 30, text:"PRODUCT STORE"
+	
+end openApp
+to handle placeOrder mainsel,subselection
+	click text:mainsel,Casesensitive:off, waitFor:5
+	click text:subselection,waitFor:5
+	repeat until ImageFound(text:"Dell i7 8gb", waitFor:5)
+		ScrollWheelDown 5
+		Wait 5
+		
+	end repeat
+	click FoundImageLocation()
+	if ImageFound(text:"Product description", waitFor:5)
+		LogSuccess "Opened successfully"
+	else
+		LogError "Page not found"
+		
+	end if
+	click text:"Add to cart"
+	if ImageFound(text:"Product added", waitFor:5)
+		//MoveTo text:"OK",contrast:off, waitFor:5
+		
+		set the SearchRectangle to [[739,68],[1183,196]]
+		if ImageFound(Text:"OK", dpi:"144", caseSensitive:"Yes", WaitFor:8)
+			click FoundImageLocation()
+		end if
+		LogSuccess "Product added to cart successfully"
+		
+		else
+		LogError "Product is out of stock"
+		
+	end if
+end placeOrder 

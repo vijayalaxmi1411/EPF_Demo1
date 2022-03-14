@@ -1,0 +1,19 @@
+﻿(*put file ResourcePath("C:\Users\IB2k21006\Music\testdata1.txt") *)
+
+Connect {serverID: "192.168.1.171", portNum: "3389", Visible: "Yes"}
+
+put file ResourcePath("testdata1.txt") into myfile
+repeat with each item of myfile 
+	set the itemDelimiter to " "
+	log item 1 of myfile
+	log item 2 of myfile
+	typetext item 3 of myfile
+	log item 4 of myfile
+	log item 5 of myfile
+	(*set myvar to "Vijaya"
+	put myvar after file "C:\Users\IB2k21006\Music\testdata1.txt"
+	log item 4 of it*)
+	(*put myvar before file "C:\Users\IB2k21006\Music\testdata1.txt"*)
+	
+end repeat
+

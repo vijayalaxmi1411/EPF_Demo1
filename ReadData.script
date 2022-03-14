@@ -1,0 +1,22 @@
+﻿(*put file ResourcePath("C:\Users\IB2k21006\Music\TestData.txt")*)
+(*repeat with each line of file "C:\Users\IB2k21006\Music\TestData.txt"
+	log item 1 of it
+	log item 2 of it
+end repeat*)
+
+
+(*put file ResourcePath("C:\Users\IB2k21006\Music\EggplantSuites\FirstSuite.suite\Resources\TestData.txt") *)
+put file ResourcePath("testdata1.txt") into myfile
+(*set the itemDelimiter to " "
+log item 2 of myfile*)
+repeat with each item of myfile 
+	set the itemDelimiter to " "
+	log it
+end repeat
+
+put file "C:\Users\IB2k21006\Music\EggplantSuites\FirstSuite.suite\Resources\TestData.txt" into myFile
+(*put myFile into file "C:\Users\IB2k21006\Music\EggplantSuites\FirstSuite.suite\Resources\TestData.txt"*)
+//put myFile into file "TestData.txt"
+repeat with each line of myFile
+	log item 1 of it
+end repeat
